@@ -8,7 +8,6 @@
 --
 --  Multi-threaded data loader
 --
-
 local datasets = require 'datasets/init'
 local Threads = require 'threads'
 Threads.serialization('threads.sharedserialize')

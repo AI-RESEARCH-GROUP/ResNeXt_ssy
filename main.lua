@@ -23,8 +23,8 @@ torch.setdefaulttensortype('torch.FloatTensor')
 torch.setnumthreads(1)
 
 local opt = opts.parse(arg)
-torch.manualSeed(opt.manualSeed)
-cutorch.manualSeedAll(opt.manualSeed)
+torch.manualSeed(opt.manualSeed)###为CPU设置种子用于生成随机数，以使得结果是确定的
+cutorch.manualSeedAll(opt.manualSeed)###为所有的GPU设置种子
 
 -- Load previous checkpoint, if it exists
 local checkpoint, optimState = checkpoints.latest(opt)
